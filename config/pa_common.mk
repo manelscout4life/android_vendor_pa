@@ -41,6 +41,9 @@ else
         ParanoidPreferences
 endif
 
+PRODUCT_PACKAGES += \
+    OTAPlatform
+
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/$(PARANOID_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
@@ -104,3 +107,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.goo.rom=ParanoidAndroid \
   ro.goo.version=$(DATE)
 
+# OTAPlatform properties
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro_otaplatform.changelog_url=https://plus.google.com/app/basic/107979589566958860409/posts \
+  ro_otaplatform.gapps_url=http://goo.im/gapps \
+  ro_otaplatform.gapps_version=20130301 \
+  ro_otaplatform.backup_files=/system/etc/paranoid/properties.conf
