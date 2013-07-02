@@ -41,9 +41,6 @@ else
         ParanoidPreferences
 endif
 
-PRODUCT_PACKAGES += \
-    OTAPlatform
-
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/$(PARANOID_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
@@ -55,7 +52,7 @@ endif
 # T-Mobile theme engine
 include vendor/pa/config/themes_common.mk
 
-#Embed superuser into settings 
+# embed superuser into settings 
 SUPERUSER_EMBEDDED := true
 
 # device common prebuilts
@@ -93,9 +90,9 @@ TARGET_CUSTOM_RELEASETOOL :=source vendor/pa/tools/squisher
 
 VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 ifeq ($(DEVELOPER_VERSION),true)
-    PA_VERSION := dev_$(BOARD)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+    PA_VERSION := dev_$(BOARD)-$(VERSION)-$(shell date -u +%Y%m%d)
 else
-    PA_VERSION := $(TARGET_PRODUCT)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+    PA_VERSION := $(TARGET_PRODUCT)-$(VERSION)-$(shell date -u +%Y%m%d)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -108,9 +105,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.goo.device=t0lte \
   ro.goo.version=$(DATE)
 
-# OTAPlatform properties
-PRODUCT_PROPERTY_OVERRIDES += \
-  ro_otaplatform.changelog_url=https://plus.google.com/app/basic/107979589566958860409/posts \
-  ro_otaplatform.gapps_url=http://goo.im/gapps \
-  ro_otaplatform.gapps_version=20130301 \
-  ro_otaplatform.backup_files=/system/etc/paranoid/properties.conf
+# goo.im properties
+ifneq ($(DEVELOPER_VERSION),true)
+    PRODUCT_PROPERTY_OVERRIDES += \
+      ro.goo.developerid=paranoidandroid \
+      ro.goo.rom=paranoidandroid \
+      ro.goo.version=$(shell date +%s)
+endif
+
