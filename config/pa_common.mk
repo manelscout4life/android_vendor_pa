@@ -103,8 +103,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION) \
   ro.papref.revision=$(PA_PREF_REVISION) \
-  ro.goo.developerid=manelscout4life \
+  ro.goo.developerid=ManelScout4Life \
   ro.goo.rom=ParanoidAndroid \
+  ro.goo.device=t0lte \
   ro.goo.version=$(DATE)
 
 # OTAPlatform properties
