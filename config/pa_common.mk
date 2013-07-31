@@ -46,7 +46,8 @@ endif
 
 # embed superuser into settings 
 SUPERUSER_EMBEDDED := true
-
+ PRODUCT_PACKAGES += \
+        su
 # device common prebuilts
 ifneq ($(DEVICE_COMMON),)
     -include vendor/pa/prebuilt/$(DEVICE_COMMON)/prebuilt.mk
