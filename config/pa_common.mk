@@ -19,6 +19,10 @@ PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/pa/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
 
+# Gesture enabled JNI
+PRODUCT_COPY_FILES += \
+    vendor/pa/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
@@ -33,8 +37,10 @@ else
 endif
 
 # ParanoidOTA
-PRODUCT_PACKAGES += \
-    ParanoidOTA
+ifneq ($(NO_OTA_BUILD),true)
+    PRODUCT_PACKAGES += \
+        ParanoidOTA
+endif
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
@@ -83,7 +89,7 @@ PRODUCT_COPY_FILES += \
 
 PA_VERSION_MAJOR = 3
 PA_VERSION_MINOR = 9
-PA_VERSION_MAINTENANCE = 5
+PA_VERSION_MAINTENANCE = 6
 PA_PREF_REVISION = 1
 
 TARGET_CUSTOM_RELEASETOOL := source vendor/pa/tools/squisher
