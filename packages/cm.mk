@@ -1,21 +1,9 @@
-# Required CM packages
-#PRODUCT_PACKAGES += \
-#    Focal \
-#    Development \
-#    LatinIME \
-#    Superuser \
-#    su
-
-# Optional CM packages
-#PRODUCT_PACKAGES += \
-#    VoicePlus \
-#    VideoEditor \
-#    VoiceDialer \
-#    SoundRecorder \
-#    Basic
-
-# Extra tools in CM
+# Extra CM packages
 PRODUCT_PACKAGES += \
+    DSPManager \
+    libcyanogen-dsp \
+    CMFileManager \
+    Torch \
     openvpn \
     e2fsck \
     Focal \
@@ -26,12 +14,7 @@ PRODUCT_PACKAGES += \
     nano \
     htop \
     powertop \
-    lsof \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
-    ntfsfix \
-    ntfs-3g
+    lsof
 
 # Openssh
 PRODUCT_PACKAGES += \
