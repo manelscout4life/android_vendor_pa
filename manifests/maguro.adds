@@ -1,13 +1,14 @@
 [
     {
         "remote":       "github",
-        "account":      "BigBrother1984",
-        "repository":   "Paranoid-FK-Tuna",
+        "account":      "ParanoidAndroid",
+        "repository":   "android_kernel_samsung_tuna",
         "target_path":  "kernel/samsung/tuna",
-        "revision":     "nightlies-4.3"
+        "revision":     "mainline"
     },
     {
         "remote":       "cm",
+	"account":	"CyanogenMod",
         "repository":   "android_packages_apps_Torch",
         "target_path":  "packages/apps/Torch",
         "revision":     "cm-10.2"
