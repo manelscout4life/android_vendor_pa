@@ -29,14 +29,14 @@
     },
     {
         "remote":       "github",
-        "account":      "CyanogenMod",
-        "repository":   "android_device_samsung_t0lte",
+        "account":      "manelscout4life",
+        "repository":   "pa_android_device_samsung_t0lte",
         "target_path":  "device/samsung/t0lte",
         "revision":     "cm-10.2"
     },
     {
         "remote":       "github",
-        "account":      "ParanoidAndroid",
+        "account":      "CyanogenMod",
         "repository":   "android_device_samsung_smdk4412-common",
         "target_path":  "device/samsung/smdk4412-common",
         "revision":     "cm-10.2"
@@ -50,7 +50,7 @@
     },
     {
         "remote":       "github",
-        "account":      "CyanogenMod",
+        "account":      "manelscout4life",
         "repository":   "android_kernel_samsung_smdk4412",
         "target_path":  "kernel/samsung/smdk4412",
         "revision":     "cm-10.2"
